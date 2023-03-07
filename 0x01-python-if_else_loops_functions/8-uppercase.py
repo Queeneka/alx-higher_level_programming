@@ -1,8 +1,4 @@
 #!/usr/bin/python3
 def uppercase(str):
-    """ Print a string in uppercase """
-    for i in str:
-        if ord(i) > 96 and ord(i) < 123:
-            i = chr(ord(i) - 32)
-        print('{}'.format(i), end='')
-    print('')
+    print(''.join(['{:c}'.format(ord(c) - 32) if ord(c)in range(97, 123) else c
+                  for c in str]))
